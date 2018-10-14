@@ -1,4 +1,3 @@
-/*
-export function someGetter (state) {
+export const getTags = state => {
+  return state.tags
 }
-*/
