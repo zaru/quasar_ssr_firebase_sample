@@ -1,13 +1,13 @@
 <template>
   <q-list highlight>
     <q-list-header>Menu</q-list-header>
-    <q-item>
-      <q-item-main link @click.native="$router.push({name: 'Home'})">
+    <q-item link tag="a" :to="{name: 'Home'}">
+      <q-item-main>
         Home
       </q-item-main>
     </q-item>
-    <q-item>
-      <q-item-main link @click.native="$router.push({name: 'Post'})">
+    <q-item link tag="a" :to="{name: 'Post'}">
+      <q-item-main>
         Posts
       </q-item-main>
     </q-item>
