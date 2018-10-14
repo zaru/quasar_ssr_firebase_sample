@@ -7,3 +7,11 @@ export const fetchTags = async ({ commit }) => {
     })
   })
 }
+
+export const fetchZaruPosts = async ({ commit }) => {
+  return axios.get('https://qiita.com/api/v2/users/zaru/items').then(res => {
+    res.data.forEach(post => {
+      commit('INSERT_POST', post)
+    })
+  })
+}
