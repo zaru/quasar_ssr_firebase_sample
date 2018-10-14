@@ -16,7 +16,7 @@ const
   compression = require('compression')
 
 const
-  ssr = require('../ssr-mat/ssr'),
+  ssr = require('../dist/ssr-mat/ssr'),
   app = express(),
   port = process.env.PORT || 3000
 
@@ -51,11 +51,11 @@ app.get('*', (req, res) => {
       else {
         // Render Error Page or Redirect
         res.status(500).send('500 | Internal Server Error')
-        // if (ssr.settings.debug) {
+        if (ssr.settings.debug) {
           console.error(`500 on ${req.url}`)
           console.error(err)
           console.error(err.stack)
-        // }
+        }
       }
     }
     else {
