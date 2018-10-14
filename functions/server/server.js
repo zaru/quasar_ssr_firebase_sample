@@ -16,7 +16,7 @@ const
   compression = require('compression')
 
 const
-  ssr = require('../dist/ssr-mat/ssr'),
+  ssr = require('../dist/ssr'),
   app = express(),
   port = process.env.PORT || 3000
 
