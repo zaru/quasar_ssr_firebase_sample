@@ -137,6 +137,7 @@ module.exports = function (ctx) {
 
         // appId: 'quasar-app'
       }
-    }
+    },
+    preFetch: true
   }
 }
