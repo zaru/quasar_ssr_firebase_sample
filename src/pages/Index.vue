@@ -1,6 +1,6 @@
 <template>
-  <q-page class="flex flex-center">
-    <img alt="Quasar logo" src="~assets/quasar-logo-full.svg">
+  <q-page padding>
+    <qo-menu></qo-menu>
   </q-page>
 </template>
 
@@ -8,7 +8,11 @@
 </style>
 
 <script>
+import QoMenu from '../components/QoMenu.vue'
 export default {
-  name: 'PageIndex'
+  name: 'PageIndex',
+  components: {
+    QoMenu
+  }
 }
 </script>
