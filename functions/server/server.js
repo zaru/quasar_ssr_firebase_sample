@@ -39,7 +39,8 @@ app.use('/', serve('.', true))
 // this should be last get(), rendering with SSR
 app.get('*', (req, res) => {
   res.setHeader('Content-Type', 'text/html')
-  res.setHeader('Cache-Control', 'public, max-age=300, s-maxage=600')
+  // キャッシュ設定
+  // res.setHeader('Cache-Control', 'public, max-age=300, s-maxage=600')
   ssr.renderToString({ req, res }, (err, html) => {
     console.log('error', err)
     if (err) {

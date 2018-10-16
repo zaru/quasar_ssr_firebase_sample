@@ -1,23 +1,18 @@
 <template>
   <q-page padding>
     <qo-menu></qo-menu>
+    <h1>My page</h1>
   </q-page>
 </template>
 
-<style>
-</style>
-
 <script>
 import QoMenu from '../components/QoMenu.vue'
+
 export default {
-  name: 'PageIndex',
   components: {
     QoMenu
   },
-  data () {
-    return {
-      provider: null
-    }
+  computed: {
   },
   methods: {
   },
@@ -25,3 +20,6 @@ export default {
   }
 }
 </script>
+
+<style>
+</style>

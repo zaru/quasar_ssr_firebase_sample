@@ -20,3 +20,5 @@ yarn-error.log*
 *.sln
 
 /functions/dist
+/config/development.env.js
+/.firebase

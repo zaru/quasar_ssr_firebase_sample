@@ -1,11 +1,14 @@
 // Configuration for your app
 
+let webpack = require('webpack')
+
 module.exports = function (ctx) {
   return {
     // app plugins (/src/plugins)
     plugins: [
       'i18n',
-      'axios'
+      'axios',
+      'firebase'
     ],
     css: [
       'app.styl'
@@ -33,6 +36,11 @@ module.exports = function (ctx) {
           loader: 'eslint-loader',
           exclude: /node_modules/
         })
+        cfg.plugins.push(
+          new webpack.DefinePlugin({
+            'process.env': require(`./config/development.env`)
+          })
+        )
       }
     },
     devServer: {
@@ -43,6 +51,8 @@ module.exports = function (ctx) {
     // framework: 'all' --- includes everything; for dev only!
     framework: {
       components: [
+        'QField',
+        'QInput',
         'QLayout',
         'QLayoutHeader',
         'QLayoutDrawer',
@@ -56,14 +66,16 @@ module.exports = function (ctx) {
         'QListHeader',
         'QItem',
         'QItemMain',
-        'QItemSide'
+        'QItemSide',
+        'QNoSsr'
       ],
       directives: [
         'Ripple'
       ],
       // Quasar plugins
       plugins: [
-        'Notify'
+        'Notify',
+        'Loading'
       ]
       // iconSet: ctx.theme.mat ? 'material-icons' : 'ionicons'
       // i18n: 'de' // Quasar language

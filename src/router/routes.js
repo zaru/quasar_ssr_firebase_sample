@@ -4,8 +4,12 @@ const routes = [
     path: '/',
     component: () => import('layouts/MyLayout.vue'),
     children: [
-      { path: '', name: 'Home', component: () => import('pages/Index.vue') },
-      { path: 'posts', name: 'Post', component: () => import('pages/Posts.vue') }
+      { path: '', name: 'Home', component: () => import('pages/Index.vue'), meta: { requiresAuth: false } },
+      { path: 'auth', name: 'Auth', component: () => import('pages/Auth.vue'), meta: { requiresAuth: false } },
+      { path: 'posts', name: 'Post', component: () => import('pages/Posts.vue'), meta: { requiresAuth: false } },
+      { path: 'signup', name: 'SignUp', component: () => import('pages/SignUp.vue'), meta: { requiresAuth: false } },
+      { path: 'register', name: 'Register', component: () => import('pages/Register.vue'), meta: { requiresAuth: false } },
+      { path: 'mypage', name: 'MyPage', component: () => import('pages/MyPage.vue'), meta: { requiresAuth: true } }
     ]
   }
 ]

@@ -1,6 +1,7 @@
 <template>
   <q-page padding>
     <qo-menu></qo-menu>
+
     <h1>Posts page</h1>
     <h2>SSR contents</h2>
     <ul>
